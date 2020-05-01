@@ -1,26 +1,29 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>Hello my name is Najam</p>
-                    <a
-                        className="App-link"
-                        href="https://facebook.com/angrynajam"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        facebook
-                    </a>
-                </header>
-            </div>
-        );
-    }
+function App() {
+    const monstersData = [
+        {
+            name: 'Frankenstine',
+        },
+        {
+            name: 'Dracula',
+        },
+        {
+            name: 'Zombie',
+        },
+    ];
+
+    const [monsters, setMonsters] = useState(monstersData);
+
+    return (
+        <div className="App">
+            {monsters.map((monster) => (
+                <h1> {monster.name} </h1>
+            ))}
+        </div>
+    );
 }
 
 export default App;
