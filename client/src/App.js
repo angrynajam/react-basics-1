@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
     const monstersData = [
         {
             name: 'Frankenstine',
+            id: 1,
         },
         {
             name: 'Dracula',
+            id: 2,
         },
         {
             name: 'Zombie',
+            id: 3,
         },
     ];
 
@@ -20,7 +22,7 @@ function App() {
     return (
         <div className="App">
             {monsters.map((monster) => (
-                <h1> {monster.name} </h1>
+                <h1 key={monster.id}> {monster.name} </h1>
             ))}
         </div>
     );
